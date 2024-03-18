@@ -68,14 +68,14 @@ type ActorDefs_InterestsPref struct {
 	Tags []string `json:"tags" cborgen:"tags"`
 }
 
-// ActorDefs_ModPrefItem is a "modPrefItem" in the app.bsky.actor.defs schema.
-type ActorDefs_ModPrefItem struct {
+// ActorDefs_LabelerPrefItem is a "labelerPrefItem" in the app.bsky.actor.defs schema.
+type ActorDefs_LabelerPrefItem struct {
 	Did string `json:"did" cborgen:"did"`
 }
 
-// ActorDefs_ModsPref is a "modsPref" in the app.bsky.actor.defs schema.
-type ActorDefs_ModsPref struct {
-	Mods []*ActorDefs_ModPrefItem `json:"mods" cborgen:"mods"`
+// ActorDefs_LabelersPref is a "labelersPref" in the app.bsky.actor.defs schema.
+type ActorDefs_LabelersPref struct {
+	Labelers []*ActorDefs_LabelerPrefItem `json:"labelers" cborgen:"labelers"`
 }
 
 // ActorDefs_MutedWord is a "mutedWord" in the app.bsky.actor.defs schema.

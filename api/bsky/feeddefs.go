@@ -66,18 +66,19 @@ func (t *FeedDefs_FeedViewPost_Reason) UnmarshalJSON(b []byte) error {
 //
 // RECORDTYPE: FeedDefs_GeneratorView
 type FeedDefs_GeneratorView struct {
-	LexiconTypeID     string                         `json:"$type,const=app.bsky.feed.defs#generatorView" cborgen:"$type,const=app.bsky.feed.defs#generatorView"`
-	Avatar            *string                        `json:"avatar,omitempty" cborgen:"avatar,omitempty"`
-	Cid               string                         `json:"cid" cborgen:"cid"`
-	Creator           *ActorDefs_ProfileView         `json:"creator" cborgen:"creator"`
-	Description       *string                        `json:"description,omitempty" cborgen:"description,omitempty"`
-	DescriptionFacets []*RichtextFacet               `json:"descriptionFacets,omitempty" cborgen:"descriptionFacets,omitempty"`
-	Did               string                         `json:"did" cborgen:"did"`
-	DisplayName       string                         `json:"displayName" cborgen:"displayName"`
-	IndexedAt         string                         `json:"indexedAt" cborgen:"indexedAt"`
-	LikeCount         *int64                         `json:"likeCount,omitempty" cborgen:"likeCount,omitempty"`
-	Uri               string                         `json:"uri" cborgen:"uri"`
-	Viewer            *FeedDefs_GeneratorViewerState `json:"viewer,omitempty" cborgen:"viewer,omitempty"`
+	LexiconTypeID     string                             `json:"$type,const=app.bsky.feed.defs#generatorView" cborgen:"$type,const=app.bsky.feed.defs#generatorView"`
+	Avatar            *string                            `json:"avatar,omitempty" cborgen:"avatar,omitempty"`
+	Cid               string                             `json:"cid" cborgen:"cid"`
+	Creator           *ActorDefs_ProfileView             `json:"creator" cborgen:"creator"`
+	Description       *string                            `json:"description,omitempty" cborgen:"description,omitempty"`
+	DescriptionFacets []*RichtextFacet                   `json:"descriptionFacets,omitempty" cborgen:"descriptionFacets,omitempty"`
+	Did               string                             `json:"did" cborgen:"did"`
+	DisplayName       string                             `json:"displayName" cborgen:"displayName"`
+	IndexedAt         string                             `json:"indexedAt" cborgen:"indexedAt"`
+	Labels            []*comatprototypes.LabelDefs_Label `json:"labels,omitempty" cborgen:"labels,omitempty"`
+	LikeCount         *int64                             `json:"likeCount,omitempty" cborgen:"likeCount,omitempty"`
+	Uri               string                             `json:"uri" cborgen:"uri"`
+	Viewer            *FeedDefs_GeneratorViewerState     `json:"viewer,omitempty" cborgen:"viewer,omitempty"`
 }
 
 // FeedDefs_GeneratorViewerState is a "generatorViewerState" in the app.bsky.feed.defs schema.

@@ -4,6 +4,10 @@ package atproto
 
 // schema: com.atproto.label.defs
 
+import (
+	"github.com/bluesky-social/indigo/lex/util"
+)
+
 // LabelDefs_Label is a "label" in the com.atproto.label.defs schema.
 //
 // Metadata tag on an atproto resource (eg, repo or record).
@@ -12,22 +16,32 @@ type LabelDefs_Label struct {
 	Cid *string `json:"cid,omitempty" cborgen:"cid,omitempty"`
 	// cts: Timestamp when this label was created.
 	Cts string `json:"cts" cborgen:"cts"`
+	// exp: Timestamp at which this label expires (no longer applies).
+	Exp *string `json:"exp,omitempty" cborgen:"exp,omitempty"`
 	// neg: If true, this is a negation label, overwriting a previous label.
 	Neg *bool `json:"neg,omitempty" cborgen:"neg,omitempty"`
+	// sig: Signature of dag-cbor encoded label.
+	Sig *util.LexBytes `json:"sig,omitempty" cborgen:"sig,omitempty"`
 	// src: DID of the actor who created this label.
 	Src string `json:"src" cborgen:"src"`
 	// uri: AT URI of the record, repository (account), or other resource that this label applies to.
 	Uri string `json:"uri" cborgen:"uri"`
 	// val: The short string name of the value or type of this label.
 	Val string `json:"val" cborgen:"val"`
+	// ver: The AT Protocol version of the label object.
+	Ver *int64 `json:"ver,omitempty" cborgen:"ver,omitempty"`
 }
 
 // LabelDefs_LabelValueDefinition is a "labelValueDefinition" in the com.atproto.label.defs schema.
 //
 // Declares a label value and its expected interpertations and behaviors.
 type LabelDefs_LabelValueDefinition struct {
+	// adultOnly: Does the user need to have adult content enabled in order to configure this label?
+	AdultOnly *bool `json:"adultOnly,omitempty" cborgen:"adultOnly,omitempty"`
 	// blurs: What should this label hide in the UI, if applied? 'content' hides all of the target; 'media' hides the images/video/audio; 'none' hides nothing.
 	Blurs string `json:"blurs" cborgen:"blurs"`
+	// defaultSetting: The default setting for this label.
+	DefaultSetting *string `json:"defaultSetting,omitempty" cborgen:"defaultSetting,omitempty"`
 	// identifier: The value of the label being defined. Must only include lowercase ascii and the '-' character ([a-z-]+).
 	Identifier string                                   `json:"identifier" cborgen:"identifier"`
 	Locales    []*LabelDefs_LabelValueDefinitionStrings `json:"locales" cborgen:"locales"`
